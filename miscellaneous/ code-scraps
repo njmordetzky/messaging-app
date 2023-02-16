@@ -1,0 +1,412 @@
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Messaging App</title>
+  <script type="module" src="js/mock-data/conversation-data.js"></script>
+  <script type="module" src="js/messaging-app-njm.js"></script>
+    
+  
+    function addContact() {
+      var arrayOfContacts = enterParticipants.value.split(",");
+      const newPostRef = postsRef.push(ref(database, "ChatConversations/"), {
+        users: arrayOfContacts,
+        chatName: "Fake Name",
+        notificationSettings: "",
+        lastMessageTimestamp: "",
+        lastMessage: {
+          userId: "The user that sent the last message",
+          message: "preview of this last message..."
+        }
+      })
+        .then(() => {
+          alert("New Chat Created!");
+          const postId = newPostRef.key;
+          displayNewChat(postId);
+        })
+        .catch((error) => {
+          alert(error);
+        });
+    };
+
+    function displayNewChatpostId(postId) {
+      const databaseReference = ref(database);
+      const postId = newPostRef.key;
+
+      get(child(databaseReference, "ChatConversations/" + newPostRef.key))
+        .then((snapshot) => {
+          if (snapshot.exists()) {
+            participants.innerHTML = "Group Members: " + snapshot.val().chatName;
+          } else {
+            alert("error");
+          }
+        });
+    };
+
+
+
+
+
+
+    get(child(databaseReference, "ChatConversations"))
+    .then((snapshot) => {
+      if (snapshot.exists()) {
+        chatParticipants.innerHTML = "You created a chat with these contacts: "
+          + snapshot.child("users/0").val()
+          + ", "
+          + snapshot.child("users/1").val();
+      } else {
+        alert("error");
+      }
+    });
+  array1.forEach(element => console.log(element));
+
+
+  chatParticipants.innerHTML = "You created a chat with these contacts: "
+  + snapshot.child("users/0").val()
+  + ", "
+  + snapshot.child("users/1").val()
+  + `<br />` + snapshot.child("users").forEach(element => console.log(element));
+
+
+  arraySparse.forEach((element) => {
+    console.log({ element });
+    numCallbackRuns++;
+  });
+
+
+  var startingNumber = 0;
+
+  function addItemsToList(user) {
+    var newChatContainer = document.createElement('h2');
+    var newChatContainer.innerHTML = "Name: " + user;
+    chatParticipants.appendChild(newChatContainer);
+    <div id="last-message" participants="">
+      <h2 id="chatParticipants"></h2>
+      <p id="chatsLastMessage"></p>
+      <p id="chatLastMessageTimestamp"></p>
+    </div>
+    ++startingNumber;
+  };
+
+  function fetchAllData(){
+    firebase.database().ref('ChatConversations').once('value', function(snapshot){
+      snapshot.forEach(
+        function(ChildSnapshot){
+          let user = ChildSnapshot.val().startingNumber;
+        }
+      )
+    });
+  };
+
+
+  testSentence.concat(user + ", ");
+
+
+  get(child(databaseReference, "ChatConversations/" + chatCoversationKey))
+  .then((snapshot) => {
+    if (snapshot.exists()) {
+      chatParticipants.innerHTML = "You created a chat with these contacts: "
+        + snapshot.child("users/0").val()
+        + ", "
+        + snapshot.child("users/1").val();
+      snapshot.child("users").val().forEach((user) => {
+        console.log(user);
+        testArray.push(user);
+        testSentence += testArray.join(', ');
+      });
+      console.log(testSentence);
+    } else {
+      alert("error");
+    }
+  });
+};
+
+
+get(child(databaseReference, "ChatConversations/" + chatCoversationKey))
+.then((snapshot) => {
+  if (snapshot.exists()) {
+    var newChatText = "You've created a new chat with: "
+    var newChatUsersArray = [];
+
+    snapshot.child("users").val().forEach((user) => {
+      console.log(user);
+      newChatUsersArray.push(user);
+    });
+
+    newChatText += testArray.join(', ') + "!";
+    newChatNotification.innerHTML = newChatText;
+
+    var newChatContainer = document.createElement('div');
+    newChatContainer.className = "chatContainer"
+    listOfChats.appendChild(newChatContainer);
+    newChatContainer.innerHTML = "Name: ".concat(newChatUsersArray);
+
+  } else {
+    alert("error");
+  }
+});
+
+
+function displayAllChats() {
+  const databaseReference = ref(database);
+
+  console.log("We've entered the displayAllChats function!");
+
+  get(child(databaseReference, "ChatConversations/" + chatCoversationKey))
+    .then((snapshot) => {
+      if (snapshot.exists()) {
+        var newChatText = "You've created a new chat with: "
+        var newChatUsersArray = [];
+
+        snapshot.forEach((anonymousConversationKey) => {
+          console.log(snapshot);
+        });
+
+      } else {
+        alert("error");
+      }
+    });
+};
+
+
+snapshot.child("users").val().forEach((user) => {
+  console.log(user);
+  newChatUsersArray.push(user);
+});
+
+newChatText += newChatUsersArray.join(', ') + "!";
+newChatNotification.innerHTML = newChatText;
+
+var newChatContainer = document.createElement('div');
+newChatContainer.className = "chatContainer"
+listOfChats.appendChild(newChatContainer);
+var listOfChatUsers = newChatUsersArray.join(', ');
+newChatContainer.innerHTML = listOfChatUsers;
+displayAllChats();
+
+
+window.onload(displayAllChats());
+
+
+<div id="listOfChats">
+  <div id="last-message" participants="">
+    <h2 id="chatParticipants"></h2>
+    <p id="chatsLastMessage"></p>
+    <p id="chatLastMessageTimestamp"></p>
+  </div>
+</div>
+
+
+++startingNumber;
+
+console.log("Chat Number: " + startingNumber);
+console.log("Chat Key: " + changingChatKey.child("ChatConversations").key);
+console.log("Includes:");
+
+var chatUsersArray = [];
+changingChatKey.child("users").val().forEach((user) => {
+  console.log(user);
+
+  chatUsersArray.push(user);
+});
+
+
+++startingNumber;
+var chatUsersArray = [];
+changingChatKey.child("users").val().forEach((user) => {
+  console.log("Chat Number: " + startingNumber + " key: " + changingChatKey.key);
+  console.log("Includes:");
+  console.log(user);
+  chatUsersArray.push(user);
+});
+
+
+
+var startingNumber = 0;
+
+get(child(databaseReference, "ChatConversations/"))
+  .then((snapshot) => {
+    if (snapshot.exists()) {
+      snapshot.forEach((changingChatKey) => {
+        ++startingNumber;
+
+        console.log("Chat Number: " + startingNumber);
+        console.log("Chat Key: " + changingChatKey.key);
+        console.log("Includes:");
+
+        var chatUsersArray = [];
+        changingChatKey.child("users").val().forEach((user) => {
+          console.log(user);
+
+          chatUsersArray.push(user);
+        });
+
+
+
+var chatContainer = document.createElement('div');
+chatContainer.className = "chatContainer";
+chatContainer.setAttribute('chat-key', changingChatKey.key);
+
+<button id="removeChatButton">Remove</button>
+var deleteButton = document.createElement('');
+
+var chatDeleteButton = document.createElement('button');
+chatDeleteButton.innerHTML = "Delete";
+findName.innerHTML = "Name: " + snapshot.val().Name;
+chatContainer.appendChild(chatDeleteButton);
+
+listOfChats.appendChild(chatContainer);
+
+
+
+              // Delete Button
+              var chatDeleteButton = document.createElement('button');
+              chatDeleteButton.setAttribute("id", "chatDelete");
+              chatDeleteButton.innerHTML = "Delete";
+              chatContainer.appendChild(chatDeleteButton);
+
+              var chatDeleteButton = document.querySelector("#chatDelete");
+              document.getElementsByTagName
+              getAttribute('chat-key');
+              chatDeleteButton.addEventListener("click", chatDelete);
+
+
+
+              // Delete Button
+              var chatDeleteButton = document.createElement('button');
+              chatDeleteButton.className = "chatDelete";
+              chatDeleteButton.innerHTML = "Delete";
+              chatContainer.appendChild(chatDeleteButton);
+              chatDeleteButton.addEventListener("click", chatDelete(changingChatKey.key));
+
+    function chatDelete(chatKey) {
+      var chatKey = chatKey;
+      console.log("The chatDelete functions working for this chat: " + chatKey);
+    };
+
+
+    chatDeleteButton.addEventListener("click", chatDelete);
+
+
+function chatUpdate(chatKey) {
+  var chatKey = chatKey;
+  console.log("The chatUpdate functions working for this chat: " + chatKey);
+
+  var chatUpdateContainer = document.createElement('div');
+
+  var chatUpdateInput = document.createElement('input');
+  chatUpdateInput.setAttribute("id", "#updateParticipants");
+
+  var chatUpdateButton = document.createElement('button');
+  chatUpdateButton.className = "chatUpdate";
+  chatUpdateButton.innerHTML = "Update";
+
+  chatUsers.appendChild(chatUpdateContainer);
+  chatUpdateInput.appendChild();
+
+  chatUpdateButton.addEventListener("click", () => { chatUpdate(chatKey) });
+
+  var enterParticipants = document.querySelector("#updateParticipants");
+  var arrayOfContacts = enterParticipants.value.split(", ");
+
+  update(ref(database, "ChatConversations/" + chatKey), {
+    Users: arrayOfContacts
+  })
+    .then(() => {
+      alert("Data Updated Successfully!");
+    })
+    .catch((error) => {
+      alert(error);
+    });
+}
+
+// Update Button
+var chatUpdateButton = document.createElement('button');
+chatUpdateButton.className = "chatUpdate";
+chatUpdateButton.innerHTML = "Update";
+chatContainer.appendChild(chatUpdateButton);
+chatUpdateButton.addEventListener("click", () => { chatUpdate(changingChatKey.key) });
+
+var enterParticipants = document.querySelector("#enterParticipants");
+var arrayOfContacts = enterParticipants.value.split(", ");
+push(ref(database, "ChatConversations/"), {
+  users: arrayOfContacts,
+  chatName: "",
+  notificationSettings: "",
+  lastMessageTimestamp: "",
+  lastMessage: {
+    userId: "The user that sent the last message",
+    message: "preview of this last message..."
+  }
+})
+
+
+function chatUpdate(chatKey) {
+  var chatKey = chatKey;
+  console.log("The chatUpdate functions working for this chat: " + chatKey);
+
+  var chatUpdateContainer = document.createElement('div');
+
+  var chatUpdateInput = document.createElement('input');
+  chatUpdateInput.setAttribute("id", "#updateParticipants");
+
+  chatUsers.appendChild(chatUpdateContainer);
+}
+
+
+window.onload(displayAllChats());
+
+
+  var chatUpdateContainer = document.createElement('div');
+  chatUpdateContainer.innerHTML = "Hey";
+  chatUserNames.appendChild(chatUpdateContainer);
+
+
+  const collection = document.getElementsByClassName("chatUsers");
+  const chatContainer = document.getElementsByClassName("chatContainer");
+
+  if (chatContainer.hasAttribute("chat-key") == chatKey) {
+    collection.style.backgroundColor = "red";
+  }
+
+    if (chatContainer.hasAttribute("chat-key")) {
+    collection.style.backgroundColor = "green";
+  }
+
+
+  const chatUserNames = document.getElementsByClassName("chatUsers");
+  const chatContainer = document.getElementsByClassName("chatContainer");
+  for (let i = 0; i < chatContainer.length; i++) {
+    if (chatContainer[i].getAttribute("chat-key") == chatKey) {
+      chatUserNames[i].style.backgroundColor = "red";
+      var testUpdateDiv = document.createElement('div');
+      testUpdateDiv.className = "updatePopupContainer";
+      chatUserNames[i].after(testUpdateDiv);
+      var testUpdateHeading = document.createElement('h3');
+      testUpdateHeading.innerHTML = "Add a comma separated list of the updated people you'd like to include in your chat";
+      testUpdateDiv.appendChild(testUpdateHeading);
+      var testUpdateInput = document.createElement('input');
+      testUpdateDiv.appendChild(testUpdateInput);
+    }
+  }
+
+
+  update(ref(database, "ChatConversations/" + chatKey), {
+    users: ['updated', 'updated']
+  })
+    .then(() => {
+      displayAllChats();
+    })
+    .catch((error) => {
+      alert(error);
+    });
+
+  var chatKey = chatKey;
+  var listOfChatUsers = listOfChatUsers;
+  individualChatHeading.innerHTML = "hey";
+  (function () {
+    var individualChatHeading = document.createElement('h1');
+    individualChatHeading.innerHTML = "Chat with: " + listOfChatUsers + " and yourself!";
+    individualChat.appendChild(individualChatHeading);
+  }());

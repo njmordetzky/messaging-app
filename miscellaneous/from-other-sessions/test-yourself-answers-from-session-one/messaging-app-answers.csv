@@ -1,0 +1,54 @@
+// 1
+Once you've exported some features out of your module, you need to import them into your script to be able to use them. You use the 'import' statement, followed by a list of the features you want, then the keyword 'from', followed by the path to your module file — a path relative to your site root.
+
+// 2
+Classes are "special functions" within which you define your class members, such as methods or a constructor.
+-We're creating a MessagingApp class.
+
+// 3
+A constructor enables you to provide any custom initialization that must be done before any other methods can be called on an instantiated object:
+  constructor(name) {
+    this.name = name;
+  } 
+If you don't provide your own constructor, then a default constructor will be supplied for you. If your class is a base class, the default constructor is empty:
+  constructor() {}
+
+// 4
+-We're creating a showConversations method within our MessagingApp class.
+
+// 5
+Once you've imported a feature into your script, you can use it as if it were defined in that same file. It will be a read only view of the feature though, and can't be altered. 
+-A for...of loop is used to iterate over each object in our imported feature, the conversation array.
+
+// 6
+This destructuring assignment syntax is a JavaScript expression that makes it possible to unpack values from arrays, or properties from objects into distinct variables. It's also a bit more concise.
+Destructured Example:
+  const lastMessage = conversation.lastMessage;
+This would become: 
+  const { lastMessage } = conversation;
+Const variables are variables which can't be changed through reassignment.
+-In this instance, we're taking our conversation mock-data and assigning it's lastMessage content to a lastMessage variable.
+
+// 7
+The Document interface represents any web page loaded in the browser and serves as an entry point into the web page's content, which is the DOM tree. The createElement() method creates an HTML element specified by tagName, a Div here. 
+-Our Div is assigned to a variable within the DOM.
+
+// 8
+classList() is a read-only property that returns a collection of the class attributes of the element. The collection can be used to manipulate the class list. The add() method inserts a new element with a specified value in to a Set object if there isn't an element with the same value already there. 
+-We're adding the class 'conversation' to our div.
+
+// 9
+The innerHTML property gets or sets the HTML contained within an element.
+-We're setting the text from our lastMessage variable within our div.
+
+// 10
+The DOM Node interface is an abstract base class upon which many other DOM API objects are based; the appendChild() method utilizes the Node interface and adds a node to the end of the list of children of a specified parent node.
+-We're adding our divs with their classes and last message text, one after another, within the document body
+
+// 11
+The 'new' operator creates an instance of an object type. Classes can only be instantiated with the new operator — attempting to call a class without new will throw a TypeError.
+-We're instantiating our class, creating a new instance of our MessagingApp and assigning it to a variable.
+
+// 12
+-We're calling the showConversations method of our messagingApp class. This method adds a div to our body tag, gives it a class, and sets the lastMessage text within it, for each entry in our conversations data. 
+ 

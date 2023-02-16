@@ -1,0 +1,84 @@
+h1,
+h2,
+h3,
+h3,
+p,
+a,
+button {
+  font-family: monospace !important;
+}
+
+body {
+  margin: 20px 40px;
+}
+
+button {
+  cursor: pointer;
+}
+
+.app-heading {
+  padding: 8px;
+  color: #32706f;
+}
+
+.app-container {
+  background-color: #32706f;
+  padding: 4px;
+  width: 600px;
+  border-radius: 3px;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.individual-chat {
+  margin-left: 40px;
+}
+
+.basic-container {
+  background-color: rgb(181, 203, 193);
+  padding: 34px;
+  border-radius: 3px;
+}
+
+input {
+  width: 60%;
+}
+
+.chatContainer {
+  background-color: rgb(48 112 111);
+  padding: 6px 34px;
+  margin: 8px 0px;
+  border-radius: 3px;
+  display: flow-root;
+}
+
+.chatContainer button {
+  float: right;
+  margin: 8px 2px;
+}
+
+.chatContainer a {
+  float: right;
+  color: #7dacc0;
+  font-size: 50px;
+  margin: 0px 2px;
+  cursor: pointer;
+  font-weight: bold;
+  word-spacing: -4px;
+}
+
+.updatePopupContainer {
+  float: right;
+  padding: 20px 40px;
+  background: #7dacc0;
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+
+.updatePopupContainer {
+  float: right;
+  padding: 20px 40px;
+  background: #7dacc0;
+  border-radius: 4px;
+  margin-bottom: 20px;
+}

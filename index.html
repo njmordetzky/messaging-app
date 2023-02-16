@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Messaging App</title>
+  <link rel="stylesheet" href="css/messaging-app.css">
+</head>
+
+<body>
+  <h1 class="app-heading">
+    MESSAGING APP
+  </h1>
+  <div class="app-container" id="chatListMain">
+    <div class="basic-container">
+      <h1 id="startNewChat">
+        Create A New Chat
+      </h1>
+      <h3>
+        Add a comma separated list of the people you'd like to include in your chat
+      </h3>
+      <input id="enterParticipants" type="text"><br /><br />
+      <button id="addNewChatButton">
+        Create New Chat
+      </button>
+    </div> <br /><br />
+    <div class="basic-container">
+      <h2 id="newChatNotification"></h2>
+      <h1>
+        Your Chats:
+      </h1>
+      <div id="listOfChats">
+      </div>
+    </div>
+  </div>
+  <div class="app-container individual-chat" id="individualMain">
+    <div class="basic-container" id="individualChatHeading">
+    </div> <br /><br />
+    <div class="basic-container" id="individualChatContainer">
+    </div>
+  </div>
+
+  <script type="module" src="js/messaging-app.js"></script>
+</body>
+
+</html>

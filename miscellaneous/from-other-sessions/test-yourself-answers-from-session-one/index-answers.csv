@@ -1,0 +1,5 @@
+
+<!-- 1 -->
+ a. The script tag is used for specifying which JavaScript should be run in a webpage. It can either include the JavaScript directly, or point to a URL where the script should be loaded from.
+ b. The "type" attribute with the value of module is used to pull in module features from an external script file. A module is just a file. One script is one module. As simple as that.
+ c. The "src" attribute specifies the URL of an external script file. Creating an external JavaScript file allows you to run it on several pages, without having to write the same script over and over.

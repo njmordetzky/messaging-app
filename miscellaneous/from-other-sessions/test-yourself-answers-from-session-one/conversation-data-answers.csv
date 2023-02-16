@@ -1,0 +1,2 @@
+// 1
+You need to export module features in order to access them elsewhere. You can export functions, var, let, const, and classes. They need to be top-level items; you can't use export from within a function.
