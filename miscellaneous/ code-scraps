@@ -410,3 +410,11 @@ window.onload(displayAllChats());
     individualChatHeading.innerHTML = "Chat with: " + listOfChatUsers + " and yourself!";
     individualChat.appendChild(individualChatHeading);
   }());
+
+
+            // Go To Individual Chat
+          var individualChatIcon = document.createElement('a');
+          individualChatIcon.className = "individualChatLink";
+          individualChatIcon.innerHTML = "&#9992;";
+          chatContainer.appendChild(individualChatIcon);
+          individualChatIcon.addEventListener("click", () => { displayIndividualChat(changingChatKey.key, listOfChatUsers) });
